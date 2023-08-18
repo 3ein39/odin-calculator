@@ -12,6 +12,18 @@ let isSecondValue = false;
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         // console.log(e.target.innerText);
+
+        if (e.target.innerText === "C") {
+            display.innerText = "0";
+            displayValue = "";
+            firstValue = "";
+            secondValue = "";
+            operator = "";
+            cnt = 0;
+            isSecondValue = false;
+            return;
+        }
+
         if (e.target.innerText === "=") {
             if (secondValue === "0" && operator === "/") {
                 alert("Division by zero is not allowed");

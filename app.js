@@ -9,9 +9,9 @@ let result = ""
 let isSecondValue = false;
 
 
+
 addEventListener('keypress', (e) => {
     // console.log(e.key);
-
     if (e.key === "C") {
         display.innerText = "0";
         displayValue = "";
@@ -55,6 +55,8 @@ addEventListener('keypress', (e) => {
     displayValue += e.key;
     updateDisplay();
 })
+
+
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         // console.log(e.target.innerText);
@@ -102,7 +104,10 @@ buttons.forEach((button) => {
         displayValue += e.target.innerText;
         updateDisplay();
     })
-})
+
+}
+
+)
 
 function solve() {
     if (operator === "+")

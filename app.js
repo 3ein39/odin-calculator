@@ -1,11 +1,11 @@
 let display = document.getElementById("display")
-let buttons = document.querySelectorAll("button")
+let buttonsH = document.getElementsByClassName("button")
+let buttons = Array.from(buttonsH)
 let displayValue = ""
 let firstValue = ""
 let secondValue = ""
 let operator = ""
 let result = ""
-let cnt = 0;
 let isSecondValue = false;
 
 
@@ -15,7 +15,7 @@ buttons.forEach((button) => {
         if (e.target.innerText === "=") {
             if (secondValue === "0" && operator === "/") {
                 alert("Division by zero is not allowed");
-                display.value = "";
+                display.innerText = "";
                 displayValue = "";
                 firstValue = "";
                 secondValue = "";
@@ -29,8 +29,7 @@ buttons.forEach((button) => {
             firstValue = result;
             secondValue = "";
             operator = "";
-            cnt = 1;
-            display.value = "";
+            display.innerText = "";
             updateDisplay();
             return;
         }
@@ -38,7 +37,7 @@ buttons.forEach((button) => {
             operator = e.target.innerText;
             isSecondValue = true;
         } else if (!isSecondValue)
-            firstValue += e.target.innerText;
+            displayValue === "0" ? firstValue = e.target.innerText : firstValue += e.target.innerText;
         else if (isSecondValue)
             secondValue += e.target.innerText;
 
@@ -59,6 +58,6 @@ function solve() {
 }
 
 function updateDisplay() {
-    display.value += displayValue;
+    display.innerText === "0" ? display.innerText = displayValue : display.innerText += displayValue;
     displayValue = "";
 }

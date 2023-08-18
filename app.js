@@ -6,20 +6,13 @@ let secondValue = ""
 let operator = ""
 let result = ""
 let cnt = 0;
+let isSecondValue = false;
 
 
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         // console.log(e.target.innerText);
-        if (cnt === 0)
-            firstValue += e.target.innerText;
-        else if (cnt === 1)
-            operator = e.target.innerText;
-        else if (cnt === 2)
-            secondValue += e.target.innerText;
-        ++cnt;
-
-        if (cnt === 3) {
+        if (e.target.innerText === "=") {
             solve();
             displayValue = result;
             firstValue = result;
@@ -30,6 +23,14 @@ buttons.forEach((button) => {
             updateDisplay();
             return;
         }
+        else if (e.target.innerText === "+" || e.target.innerText === "-" || e.target.innerText === "*" || e.target.innerText === "/") {
+            operator = e.target.innerText;
+            isSecondValue = true;
+        } else if (!isSecondValue)
+            firstValue += e.target.innerText;
+        else if (isSecondValue)
+            secondValue += e.target.innerText;
+
         displayValue += e.target.innerText;
         updateDisplay();
     })

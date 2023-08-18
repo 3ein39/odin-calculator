@@ -13,6 +13,17 @@ buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         // console.log(e.target.innerText);
         if (e.target.innerText === "=") {
+            if (secondValue === "0" && operator === "/") {
+                alert("Division by zero is not allowed");
+                display.value = "";
+                displayValue = "";
+                firstValue = "";
+                secondValue = "";
+                operator = "";
+                cnt = 0;
+                isSecondValue = false;
+                return;
+            }
             solve();
             displayValue = result;
             firstValue = result;

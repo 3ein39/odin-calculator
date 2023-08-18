@@ -45,6 +45,8 @@ body {
 .calc-button-row {
     width: 100%;
     background: #3C4857;
+    display: flex;
+    justify-content: space-between;
 }
 
 .button {

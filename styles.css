@@ -47,6 +47,7 @@ body {
     background: #3C4857;
     display: flex;
     justify-content: space-between;
+    padding: 0 4px 0 4px;
 }
 
 .button {

@@ -13,3 +13,4 @@ Odin Calculator is a simple calculator project developed for practicing HTML, CS
 ## Demo
 
 You can try out the calculator online: [Odin Calculator Demo](https://3ein39.github.io/odin-calculator/)
+- Another variation but implemented using stack (infix to postfix & evaluation) [iTi_OpenSrc task](https://3ein39.github.io/ITI-OpenSrc-tasks/Day5/calculator.html)
